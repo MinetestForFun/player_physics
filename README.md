@@ -4,8 +4,10 @@ Because many mods (sprint, 3d_armor and others) rewrite the stats in their corne
 
 
 ***API***
-player_physics.set_stats(player, "uniq_name", table)
-player_physics.remove(player, "uniq_name")
+
+ - player_physics.set_stats(player, "uniq_name", table)
+
+ - player_physics.remove_stats(player, "uniq_name")
 
 **Exemple**
  
@@ -23,7 +25,7 @@ player_physics.remove(player, "uniq_name")
 **Exemple**
 You make a potion that adds speed for 10 seconds.
 
-    on_use = function(itemstack, user, pointed_thing
+    on_use = function(itemstack, user, pointed_thing)
        player_physics.add_effect(user, "potion_speedlvl1", 10, {speed=0.6})
        itemstack:take_item()
        return itemstack
