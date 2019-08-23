@@ -1,28 +1,28 @@
-# player_physics
+# Player Physics
 A minetest mod to centralize the management of player's stats(sprint, jump, gravity)
 Because many mods (sprint, 3d_armor and others) rewrite the stats in their corner and it cancel
 
 
-***API***
+## API
 
- - player_physics.set_stats(player, "uniq_name", table)
+ - `player_physics.set_stats(player, "uniq_name", table)`
 
- - player_physics.remove_stats(player, "uniq_name")
+ - `layer_physics.remove_stats(player, "uniq_name")`
 
-**Exemple**
+## API examples
  
- - player_physics.set_stats(player, "potion_speedlvl1", {speed=0.35})
+ - `player_physics.set_stats(player, "potion_speedlvl1", {speed=0.35})`
  
- - player_physics.set_stats(player, "sprint_mod", {speed=0.35, jump=0.1})
+ - `player_physics.set_stats(player, "sprint_mod", {speed=0.35, jump=0.1})`
  
- - player_physics.remove_stats(player, "potion_speedlvl1")
+ - `player_physics.remove_stats(player, "potion_speedlvl1")`
 
-**Temporary effect**
+## Temporary effect
 
- - player_physics.add_effect(player, "uniq_name", time, stats)
- - player_physics.remove_effect(player, "uniq_name")
+ - `player_physics.add_effect(player, "uniq_name", time, stats)`
+ - `player_physics.remove_effect(player, "uniq_name")`
 
-**Exemple**
+## Code example
 You make a potion that adds speed for 10 seconds.
 
     on_use = function(itemstack, user, pointed_thing)
@@ -30,6 +30,3 @@ You make a potion that adds speed for 10 seconds.
        itemstack:take_item()
        return itemstack
     end
-
-
-
